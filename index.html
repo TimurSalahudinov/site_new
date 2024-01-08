@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pneumatic Suspensions Shop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#brand">Наши товары</a></li>
+      </ul>
+      <div id="cart-container">
+        <img
+          src="./assets/shopping-cart.svg"
+          href="#"
+          onclick="openCartModal()"
+        /><span id="cart-item-count">0</span>
+      </div>
+    </nav>
+    <header>
+      <h1>Pneumatic Suspensions Shop</h1>
+      <p>Find the perfect pneumatic suspension for your car!</p>
+    </header>
+
+    <div class="cart-modal" id="cartModal">
+      <div class="cartmodal-content">
+        <span class="close" onclick="closeCartModal()">&times;</span>
+        <h2>Корзина</h2>
+        <ul id="cart-items-modal"></ul>
+        <p>Всего: $<span id="cart-total-modal">0</span></p>
+      </div>
+    </div>
+    <div class="brands-container">
+      <section class="brand" id="brand1">
+        <img
+          src="./assets/gazbig.png"
+          alt="gaz"
+          onclick="toggleModal('brand1')"
+        />
+        <div class="products" id="products-brand1">
+          <div class="product-card">
+            <img
+              src="https://air-ride.ru/components/com_jshopping/files/img_products/thumb_102021.jpg"
+              alt="Product 1"
+            />
+            <h3>
+              Усиленная пневмоподвеска ГАЗ Газель Бизнес, Валдай, передняя ось
+            </h3>
+            <p class="description description-brand1">
+              Пневмоподвеска ГАЗ Газель / ГАЗ Валдай передняя ось разработана
+              для сохранения утрачиваемых грузовых характеристик автомобиля и
+              увеличения характеристик комфорта передней оси. Пневмоподвеска
+              защищает рессорный пакет от проседания и служит регулировкой не
+              только высоты переднего свеса автомобиля, но и комфортных
+              характеристик работы подвески передней оси.
+            </p>
+            <p>Price: $200</p>
+            <div class="buttons-container">
+              <button
+                class="add-to-cart-button"
+                onclick="addToCart('Product 1', '200')"
+              >
+                В корзину
+              </button>
+              <button
+                class="more-details-button"
+                onclick="toggleDescription('brand1')"
+              >
+                Подробнее
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://air-ride.ru/components/com_jshopping/files/img_products/thumb_102021.jpg"
+              alt="Product 1"
+            />
+            <h3>
+              Усиленная пневмоподвеска ГАЗ Газель Бизнес, Валдай, передняя ось
+            </h3>
+            <p class="description description-brand1">
+              Пневмоподвеска ГАЗ Газель / ГАЗ Валдай передняя ось разработана
+              для сохранения утрачиваемых грузовых характеристик автомобиля и
+              увеличения характеристик комфорта передней оси. Пневмоподвеска
+              защищает рессорный пакет от проседания и служит регулировкой не
+              только высоты переднего свеса автомобиля, но и комфортных
+              характеристик работы подвески передней оси.
+            </p>
+            <p>Price: $200</p>
+            <div class="buttons-container">
+              <button
+                class="add-to-cart-button"
+                onclick="addToCart('Product 1', '200')"
+              >
+                В корзину
+              </button>
+              <button
+                class="more-details-button"
+                onclick="toggleDescription('brand1')"
+              >
+                Подробнее
+              </button>
+            </div>
+          <!-- Add more product cards as needed -->
+        </div>
+      </section>
+
+      <section class="brand" id="brand2">
+        <img
+          src="./assets/kamaz1.png"
+          alt="kamaz"
+          onclick="toggleModal('brand2')"
+        />
+        <div class="products" id="products-brand2">
+          <div class="product-card">
+            <img src="product1.jpg" alt="Product 1" />
+            <h3>Prodrfeef</h3>
+            <p class="description description-brand2">
+              Description of Product 1.
+            </p>
+            <p>Price: $300</p>
+            <div class="buttons-container">
+              <button
+                class="add-to-cart-button"
+                onclick="addToCart('Product 1', '300')"
+              >
+                Add to Cart
+              </button>
+              <button
+                class="more-details-button"
+                onclick="toggleDescription('brand2')"
+              >
+                Подробнее
+              </button>
+            </div>
+          </div>
+          <!-- Add more product cards as needed -->
+        </div>
+      </section>
+
+      <section class="brand" id="brand3">
+        <img src="./assets/maz.png" alt="maz" onclick="toggleModal('brand3')" />
+        <div class="products" id="products-brand3">
+          <div class="product-card">
+            <img src="product1.jpg" alt="Product 1" />
+            <h3>Prodrfeef</h3>
+            <p class="description description-brand3">
+              Description of Product 1.
+            </p>
+            <p>Price: $400</p>
+            <div class="buttons-container">
+              <button
+                class="add-to-cart-button"
+                onclick="addToCart('Product 1', '400')"
+              >
+                Add to Cart
+              </button>
+              <button
+                class="more-details-button"
+                onclick="toggleDescription('brand3')"
+              >
+                Подробнее
+              </button>
+            </div>
+          </div>
+          <!-- Add more product cards as needed -->
+        </div>
+      </section>
+      <!-- Add more sections for other brands -->
+    </div>
+
+    <div class="modal" id="productModal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalContent" class="products"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Пневмоподвески. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
